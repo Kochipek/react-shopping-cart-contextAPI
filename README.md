@@ -7,4 +7,4 @@ Features:
 - [X] Add and remove items from the Cart
 - [X] Save cart items to local storage
 
-![image](https://user-images.githubusercontent.com/52817694/229936477-ac8ab026-bcd5-4dc8-b570-0c8ad5666421.png)
+![image](https://user-images.githubusercontent.com/52817694/229936549-75e01b67-2149-4ab9-81ad-900edcb870ab.png)

@@ -36,4 +36,10 @@ export const products = [
         price: "45.32",
         image: "/assets/img/6.png",
     },
+    {
+        id:7,
+        name: "Dummy Sneaker ",
+        price: "99.99",
+        image: "/assets/img/7.png",
+    }
 ];

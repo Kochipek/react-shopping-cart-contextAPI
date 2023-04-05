@@ -1,13 +1,17 @@
-import { products } from "../data";
 import styled from "styled-components";
 import ProductCard from "../components/ProductCard";
+import { useContext } from "react";
+import { ProductContext } from "../Context/Cart/ProductContext";
 
 const Store = () => {
+  const { products } = useContext(ProductContext);
+
   return (
     <>
       <Heading>
         <h1>Browse the Store!</h1>
-        <p>Or, go to my <b><a href="https://github.com/Kochipek">GitHub repo</a></b> and check how I created this using the Context API for the first time!</p>      </Heading>
+        <p>Or, go to my <b><a href="https://github.com/Kochipek">GitHub repo</a></b> and check how I created this using the Context API for the first time!</p>
+      </Heading>
       <ProductsContainer>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

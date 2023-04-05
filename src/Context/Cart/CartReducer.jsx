@@ -54,27 +54,25 @@ const CartReducer = (state, action) => {
         ],
       };
 
-    case INCREASE:
-      return {
-        ...state,
-        cartItems: state.cartItems.map((item) =>
-          item.id === action.payload.id
-            ? { ...item, quantity: item.quantity++ }
-            : item
-        ),
-        ...sumItems(state.cartItems),
-      };
+      case INCREASE:
+        state.cartItems[
+          state.cartItems.findIndex((item) => item.id === action.payload.id)
+        ].quantity++;
+        return {
+          ...state,
+          ...sumItems(state.cartItems),
+          cartItems: [...state.cartItems],
+        };
 
-    case DECREASE:
-      return {
-        ...state,
-        cartItems: state.cartItems.map((item) =>
-          item.id === action.payload.id
-            ? { ...item, quantity: item.quantity-- }
-            : item
-        ),
-        ...sumItems(state.cartItems),
-      };
+        case DECREASE:
+          state.cartItems[
+            state.cartItems.findIndex((item) => item.id === action.payload.id)
+          ].quantity--;
+          return {
+            ...state,
+            ...sumItems(state.cartItems),
+            cartItems: [...state.cartItems],
+          };
 
     case CHECKOUT:
       return {
